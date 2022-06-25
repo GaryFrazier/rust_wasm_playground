@@ -1,8 +1,15 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+import React, { useState, useEffect } from 'react';
+import * as wasm from 'rust-wasm-playground'
 
 export default function Home() {
+  
+  useEffect(() => {
+    wasm.greet("Gary")
+  })
+
   return (
     <div className={styles.container}>
       <Head>
