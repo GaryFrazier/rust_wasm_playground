@@ -14,6 +14,8 @@ extern {
 }
 
 #[wasm_bindgen]
-pub fn greet() {
-    alert("Hello, rust-wasm-playground!");
+pub fn greet(name: &str) {
+    let mut greeting = "Hello, ".to_owned();
+    greeting.push_str(name);
+    alert(&greeting);
 }
